@@ -15,8 +15,8 @@ namespace Assets.Scripts
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             var target = transform.position;
             target.x += horizontalInput;
-            target.x = Mathf.Clamp(target.x, _left.position.x, _right.position.x);
+            target.x = Mathf.Clamp(target.x, _left.position.x + _left.localScale.x * 2, _right.position.x - _right.localScale.x * 2);
             transform.position = Vector3.MoveTowards(transform.position, target, _moveSpeed);
         }
     }
-}
+ }

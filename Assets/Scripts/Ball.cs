@@ -20,8 +20,11 @@ namespace Assets.Scripts
             if (Input.GetButtonDown("Jump") && _isGrounded)
             {
                 transform.SetParent(null);
-                _body2.AddForce(transform.up * _impulse);
-                _body2.AddForce(new Vector2(Random.Range(-800, 800), _impulse));
+                //_body2.AddForce(transform.up * _impulse);
+
+                _body2.velocity = new Vector2(Random.Range(4f, 8f), Random.Range(4f, 8f));
+                
+               // _body2.AddForce(new Vector2(Random.Range(-800, 800), _impulse));
                 _isGrounded = !_isGrounded;
             }
         }
