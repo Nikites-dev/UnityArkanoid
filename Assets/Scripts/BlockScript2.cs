@@ -3,11 +3,17 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class BlockScript:MonoBehaviour
+    public class BlockScript2:MonoBehaviour
     {
+        private int count = 1;
         private void OnCollisionEnter2D(Collision2D collision)
         {
-           Destroy(gameObject);
+            if (count == 2)
+            {
+                Destroy(gameObject);     
+            } 
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            count++;
         }
     }
 }

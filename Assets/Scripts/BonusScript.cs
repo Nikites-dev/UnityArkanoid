@@ -1,13 +1,25 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class BlockScript:MonoBehaviour
+    public class BonusScript:MonoBehaviour
     {
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-           Destroy(gameObject);
+            if (collision.gameObject.TryGetComponent(out PlatformMove platform))
+            {
+                Destroy(gameObject);
+                if (collision.gameObject.GetComponent<PlatformMove>().transform.localScale.x == 2)
+                {
+                    collision.gameObject.GetComponent<PlatformMove>().transform.localScale = new Vector3(4, 0.5f, 1);
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<PlatformMove>().transform.localScale = new Vector3(6, 0.5f, 1);
+                }
+            }
         }
     }
 }
