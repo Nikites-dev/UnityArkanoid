@@ -16,12 +16,27 @@ namespace Assets.Scripts
        
         }
 
+       // private void Update()
+       // {
+       //     if (_isGrounded)
+       //     {
+       //         // transform.SetParent(null);
+       //         _body2.velocity = new Vector2(Random.Range(4f, 8f), Random.Range(4f, 8f));
+       //         _isGrounded = !_isGrounded;
+       //     }
+       // }
+        
+        
         private void Update()
         {
-            if (_isGrounded)
+            if ( _isGrounded)
             {
-                // transform.SetParent(null);
+                transform.SetParent(null);
+                //_body2.AddForce(transform.up * _impulse);
+
                 _body2.velocity = new Vector2(Random.Range(4f, 8f), Random.Range(4f, 8f));
+                
+                // _body2.AddForce(new Vector2(Random.Range(-800, 800), _impulse));
                 _isGrounded = !_isGrounded;
             }
         }

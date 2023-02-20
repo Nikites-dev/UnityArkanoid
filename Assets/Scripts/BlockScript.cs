@@ -14,13 +14,15 @@ namespace Assets.Scripts
 
            Random random = new Random();
 
-           int num = random.Next(0, 10);
+           int num = random.Next(0, 8);
 
            if (num == 5)
            {
                var bonus = Instantiate(_bonusPrefab, gameObject.transform.position, Quaternion.identity);
                bonus.SetActive(true);
-           }
+           } 
+           
+           
         }
     }
 }

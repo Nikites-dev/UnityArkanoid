@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,11 @@ namespace Assets.Scripts
             target.x += horizontalInput;
             target.x = Mathf.Clamp(target.x, _left.position.x + _left.localScale.x * 2, _right.position.x - _right.localScale.x * 2);
             transform.position = Vector3.MoveTowards(transform.position, target, _moveSpeed);
+        }
+
+        private void Awake()
+        {
+            PlayerPrefs.SetInt("count", 1);
         }
     }
  }

@@ -14,9 +14,9 @@ namespace Assets.Scripts
         
         private void Start()
         {
-            var linkBall = _ball.GetComponent<Ball>(); 
+          //  var linkBall = _ball.GetComponent<Ball>(); 
             
-            _text.GetComponent<Text>().text = linkBall.ballCount.ToString();
+         //   _text.GetComponent<Text>().text = linkBall.ballCount.ToString();
         }
 
        
